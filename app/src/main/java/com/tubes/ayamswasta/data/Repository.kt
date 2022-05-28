@@ -1,19 +1,26 @@
 package com.tubes.ayamswasta.data
 
 import com.google.gson.GsonBuilder
+import com.tubes.ayamswasta.BuildConfig
 import com.tubes.ayamswasta.data.interfaces.Login
+import com.tubes.ayamswasta.data.model.Menu
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.OkHttpClient
 import okhttp3.RequestBody.Companion.toRequestBody
+import okhttp3.logging.HttpLoggingInterceptor
+import org.apache.commons.lang3.StringEscapeUtils
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 
 object Repository {
     val gson = GsonBuilder().setLenient().create()
     val retrofit = Retrofit.Builder()
+        .baseUrl("http://tubespml.000webhostapp.com/")
+        .addConverterFactory(ScalarsConverterFactory.create())
         .addConverterFactory(GsonConverterFactory.create(gson))
-        .baseUrl("http://192.168.8.119/ayamswasta/")
         .build()
 
     fun login(username:String, password:String) : Call<List<com.tubes.ayamswasta.data.model.Login>> {
@@ -25,4 +32,9 @@ object Repository {
         val requestBody = dataString.toRequestBody("application/json".toMediaTypeOrNull())
         return service.login(requestBody)
     }
+
+    fun getMenu(key:String) : com.tubes.ayamswasta.data.interfaces.Menu{
+        return retrofit.create(com.tubes.ayamswasta.data.interfaces.Menu::class.java)
+    }
+
 }
