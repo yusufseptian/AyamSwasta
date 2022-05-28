@@ -34,12 +34,12 @@ class MenuFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
 
             //Menentukan LayoutManager untuk RecyclerView
-            layoutManager = LinearLayoutManager(this)
-            recycler_view.LayoutManager = layoutManager
-
-            //Link kan RecyclerView dengan class Adapter
-            adapter = RecyclerAdapter()
-            recycler_view.adapter = adapter
+//            layoutManager = LinearLayoutManager(this)
+//            recycler_view.LayoutManager = layoutManager
+//
+//            //Link kan RecyclerView dengan class Adapter
+//            adapter = RecyclerAdapter()
+//            recycler_view.adapter = adapter
         }
     }
 
@@ -48,7 +48,11 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_menu, container, false)
+        val view = layoutInflater.inflate(R.layout.fragment_menu, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
+        recyclerView.layoutManager = LinearLayoutManager(view.context)
+        recyclerView.adapter = RecyclerAdapter()
+        return view
     }
 
     companion object {
