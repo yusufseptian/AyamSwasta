@@ -13,6 +13,9 @@
         android:theme="@style/Theme.AyamSwasta"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".register"
+            android:exported="false" />
+        <activity
             android:name=".login"
             android:exported="false" />
         <activity
