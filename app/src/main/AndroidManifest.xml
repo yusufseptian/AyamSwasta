@@ -13,9 +13,6 @@
         android:theme="@style/Theme.AyamSwasta"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".login"
-            android:exported="false" />
-        <activity
             android:name=".driver_order"
             android:exported="false" />
         <activity
