@@ -33,7 +33,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
-                app:srcCompat="@drawable/gambartest" />
+                app:srcCompat="@drawable/makanann" />
 
             <LinearLayout
                 android:layout_width="match_parent"
