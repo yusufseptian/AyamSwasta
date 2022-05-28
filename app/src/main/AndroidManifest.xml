@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AyamSwasta"
         android:usesCleartextTraffic="true">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3729926965359663~5196436184"/>
         <activity
             android:name=".login"
             android:exported="false" />

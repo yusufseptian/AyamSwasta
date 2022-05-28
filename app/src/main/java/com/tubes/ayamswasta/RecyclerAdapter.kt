@@ -11,7 +11,7 @@ import com.google.android.material.snackbar.Snackbar
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
 //    image list
     private val images = intArrayOf(
-    R.drawable.gambartest
+    R.drawable.makanann
     )
 //    title list
     private val titles = arrayOf(
@@ -31,11 +31,11 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemTitle = itemView.findViewById(R.id.namamenu)
             itemDetail = itemView.findViewById(R.id.hargamenu)
 
-            itemView.setOnClickListener { v: View ->
-                var position: Int = getAdapterPosition()
-                Snackbar.make(v, "Clink on item $(titles[position])",
-                    Snackbar.LENGTH_LONG).setAction("Action", null).show()
-            }
+//            itemView.setOnClickListener { v: View ->
+//                var position: Int = getAdapterPosition()
+//                Snackbar.make(v, "Clink on item $(titles[position])",
+//                    Snackbar.LENGTH_LONG).setAction("Action", null).show()
+//            }
         }
     }
 

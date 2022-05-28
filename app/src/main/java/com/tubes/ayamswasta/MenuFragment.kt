@@ -34,8 +34,6 @@ class MenuFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
 
             //Menentukan LayoutManager untuk RecyclerView
-
-//
 //            layoutManager = LinearLayoutManager(this)
 //            recycler_view.LayoutManager = layoutManager
 //
@@ -50,8 +48,6 @@ class MenuFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-//        return inflater.inflate(R.layout.fragment_menu, container, false)
-
         val view = layoutInflater.inflate(R.layout.fragment_menu, container, false)
         val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(view.context)
