@@ -10,4 +10,7 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="start_order">"START ORDER"</string>
+
+    <string name="headermenu">You Need To Eat!</string>
+    <string name="foodanddrink">FOOD - DRINK</string>
 </resources>
