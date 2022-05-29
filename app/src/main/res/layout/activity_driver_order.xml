@@ -69,7 +69,7 @@
         tools:layout_editor_absoluteY="75dp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/txt_nama_driver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -89,7 +89,7 @@
         android:background="@drawable/kotak_putih"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/txt_nama_driver"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
@@ -118,6 +118,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/txt_nama_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ayam Swasta"
@@ -125,6 +126,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/txt_alamat_user"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -171,23 +173,69 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="66dp"
-        tools:layout_editor_absoluteY="346dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteY="346dp">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/vespa"/>
+            android:layout_width="20dp"
+            android:layout_height="30dp"
+            android:background="@drawable/vespa" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Free Delivery"/>
+            android:layout_margin="5dp"
+            android:text="Free Delivery"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
 
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout2"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="346dp">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/ic_baseline_gps_fixed_24" />
+
+        <TextView
+            android:id="@+id/txt_jarak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="00"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MORE DETAILS"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:background="@drawable/kotak_putih"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2"
+        app:layout_constraintVertical_bias="0.110000014"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
