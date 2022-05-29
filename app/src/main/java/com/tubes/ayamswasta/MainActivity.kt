@@ -7,6 +7,12 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.tubes.ayamswasta.data.model.Menu
+import com.tubes.ayamswasta.data.model.ResponseAction
+import com.tubes.ayamswasta.data.repository.MenuMakananRepository
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
