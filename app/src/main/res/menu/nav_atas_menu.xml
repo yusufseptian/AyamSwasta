@@ -23,4 +23,9 @@
         android:id="@+id/menuItem5"
         android:title="Order Detail "/>
 
+    <item
+        android:id="@+id/menuItem6"
+        android:title="Logout"
+        />
+
 </menu>
