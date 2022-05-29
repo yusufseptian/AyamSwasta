@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view" >
+
+    <item
+        android:id="@+id/menuItem1"
+        android:title="Main Menu"/>
+
+    <item
+        android:id="@+id/menuItem2"
+        android:title="Menu Manage"/>
+
+    <item
+        android:id="@+id/menuItem3"
+        android:title="Customer Manage"/>
+
+    <item
+        android:id="@+id/menuItem4"
+        android:title="Order Confirmation"/>
+
+    <item
+        android:id="@+id/menuItem5"
+        android:title="Order Detail "/>
+
+</menu>

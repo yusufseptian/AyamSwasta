@@ -13,4 +13,7 @@
 
     <string name="headermenu">You Need To Eat!</string>
     <string name="foodanddrink">FOOD - DRINK</string>
+    
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
