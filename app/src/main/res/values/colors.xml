@@ -8,8 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="bottom_nav_background">#fed8d0</color>
-    <color name="bottom_nav_item">#8c706d</color>
-    <color name="bottom_nav_selected_item">#220006</color>
+    <color name="bottom_nav_background">@color/white</color>
+    <color name="bottom_nav_item">@color/black</color>
+    <color name="bottom_nav_selected_item">@color/secondaryColor</color>
     <color name="fragment_bg_color">#fdf8f4</color>
 </resources>
