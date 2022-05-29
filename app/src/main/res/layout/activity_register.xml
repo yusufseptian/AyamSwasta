@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/gradient"
-    tools:context=".login">
+    tools:context=".register">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Selamat Datang, Ayam Swasta"
+        android:text="Register Account"
         android:textColor="@color/white"
         android:textSize="45dp"
         android:textStyle="bold"
@@ -25,7 +25,7 @@
         android:id="@+id/LL_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,8 +58,8 @@
         android:id="@+id/LL_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:orientation="vertical"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LL_username">
@@ -83,52 +83,59 @@
             android:height="60dp"
             android:background="@drawable/kotak_txt"
             android:hint="Insert Password"
-            android:padding="18dp"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:padding="18dp" />
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_login"
+    <LinearLayout
+        android:id="@+id/LL_confirm_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_marginTop="30dp"
-        android:width="300dp"
-        android:background="@drawable/kotak_putih"
-        android:text="LOGIN"
-        android:textColor="@color/black"
-        android:textSize="20dp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LL_password"
-        android:onClick="logins"/>
+        app:layout_constraintTop_toBottomOf="@+id/LL_password">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Don’t Have an Account?"
-        android:textColor="@color/white"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+        <TextView
+            android:id="@+id/txt_confirm_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Confirm Password"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            tools:layout_editor_absoluteX="157dp"
+            tools:layout_editor_absoluteY="252dp" />
+
+        <EditText
+            android:id="@+id/textbox_confirm_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="340dp"
+            android:height="60dp"
+            android:background="@drawable/kotak_txt"
+            android:hint="Insert Confirm Password"
+            android:inputType="textPassword"
+            android:padding="18dp" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="300dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/regis"
-        android:backgroundTint="#fff"
-        android:text="REGISTER NOW"
+        android:background="@drawable/kotak_putih"
+        android:text="REGISTER"
+        android:textColor="@color/black"
         android:textSize="20dp"
         android:textStyle="bold"
+        android:layout_marginTop="120dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/LL_confirm_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
