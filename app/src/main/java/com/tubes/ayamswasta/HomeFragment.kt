@@ -1,10 +1,17 @@
 package com.tubes.ayamswasta
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import com.tubes.ayamswasta.data.model.ResponseAction
+import com.tubes.ayamswasta.data.repository.MenuMakananRepository
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -33,8 +40,9 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        view.findViewById<TextView>(R.id.lblUser).text = activity?.getSharedPreferences("account", Context.MODE_PRIVATE)?.getString("username","").toString()
+        return view
     }
 
     companion object {

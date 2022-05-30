@@ -7,24 +7,8 @@ import retrofit2.Callback
 import retrofit2.Response
 
 object MenuMakananRepository {
-    fun getMenu(key:String) : ArrayList<Menu>{
-        val service =  Repository.retrofit.create(com.tubes.ayamswasta.data.interfaces.Menu::class.java)
-        val result = ArrayList<Menu>()
-        service.getMenu(key).enqueue(object: Callback<List<Menu>>{
-            override fun onResponse(call: Call<List<Menu>>, response: Response<List<Menu>>) {
-                if(response.isSuccessful){
-                    response.body()?.forEach {
-                        result.add(it)
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<List<Menu>>, t: Throwable) {
-                TODO("Not yet implemented")
-            }
-
-        })
-        return result
+    fun getMenu() : com.tubes.ayamswasta.data.interfaces.Menu{
+        return Repository.retrofit.create(com.tubes.ayamswasta.data.interfaces.Menu::class.java)
     }
 
     fun insertMenu() : com.tubes.ayamswasta.data.interfaces.Menu{

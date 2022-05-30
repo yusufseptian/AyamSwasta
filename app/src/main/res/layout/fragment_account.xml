@@ -25,14 +25,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Username"
+            android:text="Nama Lengkap"
             android:textColor="@color/black"
             android:textSize="16dp"/>
 
         <EditText
+            android:id="@+id/txtFullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Insert Username"
+            android:hint="Insert Full name"
             android:textColor="@color/white"
             android:padding="10dp"
             android:layout_marginTop="10dp"
@@ -47,6 +48,7 @@
             android:textSize="16dp"/>
 
         <EditText
+            android:id="@+id/txtPhone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Insert Phone"
@@ -65,6 +67,7 @@
             android:textSize="16dp"/>
 
         <EditText
+            android:id="@+id/txtAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Insert Address"
@@ -74,6 +77,7 @@
             android:background="@color/secondaryColor"/>
 
         <Button
+            android:id="@+id/btnEditAkun"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/kotak_putih"
@@ -83,6 +87,7 @@
             android:layout_marginTop="50dp"/>
 
         <Button
+            android:id="@+id/btnDelete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/kotak_putih"
@@ -92,6 +97,7 @@
             android:layout_marginTop="10dp"/>
 
         <Button
+            android:id="@+id/btnLogout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/kotak_putih"

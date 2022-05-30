@@ -7,6 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.tubes.ayamswasta.data.adapter.RecyclerAdapter
+import com.tubes.ayamswasta.data.model.Menu
+import com.tubes.ayamswasta.data.repository.MenuMakananRepository
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -49,9 +55,20 @@ class MenuFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view = layoutInflater.inflate(R.layout.fragment_menu, container, false)
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
-        recyclerView.layoutManager = LinearLayoutManager(view.context)
-        recyclerView.adapter = RecyclerAdapter()
+        MenuMakananRepository.getMenu().getMenu("menu").enqueue(object : Callback<List<Menu>>{
+            override fun onResponse(call: Call<List<Menu>>, response: Response<List<Menu>>) {
+                if(response.isSuccessful){
+                    val recyclerView = view.findViewById<RecyclerView>(R.id.recycler_view)
+                    recyclerView.layoutManager = LinearLayoutManager(view.context)
+                    recyclerView.adapter = RecyclerAdapter(response.body()!!, view.context)
+                }
+            }
+
+            override fun onFailure(call: Call<List<Menu>>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
         return view
     }
 

@@ -1,5 +1,6 @@
-package com.tubes.ayamswasta
+package com.tubes.ayamswasta.data.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,21 +8,19 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
+import com.tubes.ayamswasta.R
+import com.tubes.ayamswasta.data.model.Menu
 
-class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
-//    image list
-    private val images = intArrayOf(
-    R.drawable.makanann
-    )
-//    title list
-    private val titles = arrayOf(
-    "Ayam Goreng"
-    )
-//    detail list
-    private val details = arrayOf(
-    "Rp 13.000"
-    )
-//    viewholder class
+class RecyclerAdapter(foodData : List<Menu>, context: Context): RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
+
+    private val foodData : List<Menu>
+    private val context : Context
+
+    init{
+        this.foodData = foodData
+        this.context = context
+    }
+
     inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         var itemImage: ImageView
         var itemTitle: TextView
@@ -31,11 +30,11 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
             itemTitle = itemView.findViewById(R.id.namamenu)
             itemDetail = itemView.findViewById(R.id.hargamenu)
 
-//            itemView.setOnClickListener { v: View ->
-//                var position: Int = getAdapterPosition()
-//                Snackbar.make(v, "Clink on item $(titles[position])",
-//                    Snackbar.LENGTH_LONG).setAction("Action", null).show()
-//            }
+            itemView.setOnClickListener { v: View ->
+                var position: Int = getAdapterPosition()
+                Snackbar.make(v, "Clink on item ${foodData[position].menu_name}",
+                    Snackbar.LENGTH_LONG).setAction("Action", null).show()
+            }
         }
     }
 
@@ -47,12 +46,13 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
     }
 //    onbindviewholder
     override fun onBindViewHolder(viewHolder: ViewHolder, i: Int) {
-        viewHolder.itemTitle.text = titles[i]
-        viewHolder.itemDetail.text = details[i]
-        viewHolder.itemImage.setImageResource(images[i])
+        val dt : Menu = this.foodData[i]
+        viewHolder.itemTitle.text = dt.menu_name
+        viewHolder.itemDetail.text = "Rp " + dt.menu_harga.toString()
+        viewHolder.itemImage.setImageResource(R.drawable.makanann)
     }
 //    getitemcount
     override fun getItemCount(): Int {
-        return titles.size
+        return foodData.size
     }
 }
